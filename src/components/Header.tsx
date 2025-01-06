@@ -1,20 +1,26 @@
-import { useRouter } from 'next/router';
+import React from 'react';
 import Logo from './Logo';
 import { Button } from './ui/button';
+import { ThemeToggle } from './theme-toggle';
 
 const Header = () => {
-  const router = useRouter();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex flex-col items-center py-4 px-4 sm:px-6 lg:px-8">
         <div className="flex w-full justify-between items-center">
-          <div className="cursor-pointer" onClick={() => router.push("/")}>
+          <div className="cursor-pointer" onClick={scrollToTop}>
             <Logo />
           </div>
-          <Button variant="default" size="lg" onClick={() => window.open('https://whop.com/dealsoldier/', '_blank')}>
-            Join DealSoldier
-          </Button>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <Button variant="default" size="lg" onClick={() => window.open('https://whop.com/dealsoldier/', '_blank')}>
+              Join DealSoldier
+            </Button>
+          </div>
         </div>
         
         <div className="mt-4 text-center">

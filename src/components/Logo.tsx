@@ -1,19 +1,14 @@
 import React from 'react';
-import Image from 'next/image';
 
-const Logo: React.FC = () => {
+const Logo = () => {
   return (
-    <div className="flex items-center gap-3">
-      <Image
+    <div className="flex items-center gap-2">
+      <img
         src="/images/DealSoldierLogo.jpg"
         alt="DealSoldier Logo"
-        width={40}
-        height={40}
-        className="rounded-md"
+        className="h-8 w-8 object-contain"
       />
-      <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-        DealSoldier
-      </span>
+      <span className="font-bold text-xl">DealSoldier</span>
     </div>
   );
 };

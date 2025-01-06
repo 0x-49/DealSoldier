@@ -44,200 +44,123 @@ const videos = [
     id: 'v7_dealSoldier',
     title: 'Walmart Secrets: Hidden Clearance and Price Hacks!',
     description: 'Did you know Walmart has vacuum cleaners, karaoke machines, and Christmas items on clearance that don\'t show up in-store ads? Hidden clearance is real, and I\'m sharing how to find it.'
-  },
+  }
 ]
 
-export function VideoCarousel() {
+const ctaVariations = [
+  "Join Deal Soldier on Whop",
+  "Start Saving with Deal Soldier",
+  "Get Access to Deal Soldier",
+  "Unlock Deal Soldier Now",
+  "Join the Deal Hunting Pros",
+  "Start Your Savings Journey",
+  "Become a Deal Soldier"
+];
+
+export const VideoCarousel = () => {
+  const mainVideos = videos.slice(0, 6);
+  const lastVideo = videos[6];
+
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {videos.slice(0, 6).map((video) => (
-          <div key={video.id} className="flex flex-col gap-4">
-            <Card className="aspect-[9/16] relative overflow-hidden">
+    <section className="py-16 px-4 md:px-6 lg:px-8">
+      <h2 className="text-3xl font-bold text-center mb-12">🎥 See Real Deals in Action</h2>
+      
+      {/* Main grid for first 6 videos */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+        {mainVideos.map((video, index) => (
+          <Card key={video.id} className="p-4 space-y-4">
+            <div className="aspect-[9/16] w-full">
               <iframe
-                src={`${video.url}?autoplay=0&controls=1`}
-                className="w-full h-full absolute inset-0"
+                src={video.url}
+                width="100%"
+                height="100%"
+                frameBorder="0"
                 allowFullScreen
-                style={{
-                  border: 'none',
-                  width: '100%',
-                  height: '100%',
-                }}
+                className="rounded-lg"
               />
-            </Card>
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold leading-tight">{video.title}</h3>
-              <p className="text-sm text-muted-foreground">{video.description}</p>
-              <Button className="w-full" variant="default">
-                Join Deal Soldier on Whop
-              </Button>
             </div>
-          </div>
+            <div className="space-y-3">
+              <h3 className="text-xl font-bold">{video.title}</h3>
+              <p className="text-muted-foreground">{video.description}</p>
+              <a 
+                href="https://whop.com/deal-soldier/?a=digitalartlab" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-semibold text-base w-full text-center"
+              >
+                {ctaVariations[index % ctaVariations.length]}
+              </a>
+            </div>
+          </Card>
         ))}
       </div>
-      
-      {/* Last video section with benefits */}
-      <div className="mt-8 bg-muted/50 py-12 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Left benefits column */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Why Join Deal Soldier?</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-2">
-                <span className="text-primary">✓</span>
-                <span>Exclusive access to deal-finding tools worth over $200</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">✓</span>
-                <span>Real-time alerts for hidden clearance deals</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">✓</span>
-                <span>Step-by-step video tutorials on deal hunting</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">✓</span>
-                <span>Private community of expert deal finders</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">✓</span>
-                <span>Weekly live Q&A sessions with pro deal hunters</span>
-              </li>
-            </ul>
-          </div>
 
-          {/* Center video */}
-          <div className="w-full space-y-4">
-            <Card className="aspect-[9/16] relative overflow-hidden">
-              <iframe
-                src={`${videos[6].url}?autoplay=0&controls=1`}
-                className="w-full h-full absolute inset-0"
-                allowFullScreen
-                style={{
-                  border: 'none',
-                  width: '100%',
-                  height: '100%',
-                }}
-              />
-            </Card>
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold leading-tight">{videos[6].title}</h3>
-              <p className="text-sm text-muted-foreground">{videos[6].description}</p>
-              <Button className="w-full" variant="default" size="lg">
-                Join Deal Soldier on Whop
-              </Button>
-            </div>
-          </div>
-
-          {/* Right facts column */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Did You Know?</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-2">
-                <span className="text-primary">💡</span>
-                <span>Members save an average of $450/month on retail purchases</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">💡</span>
-                <span>Our tools scan over 5000+ items daily for hidden deals</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">💡</span>
-                <span>90% of clearance items never show up in store ads</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">💡</span>
-                <span>Members get first access to 3¢ deals within minutes</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary">💡</span>
-                <span>Our community has saved over $2M collectively</span>
-              </li>
-            </ul>
-          </div>
+      {/* Last video with sales copy */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* Left sales copy */}
+        <div className="lg:flex flex-col justify-center space-y-8 bg-muted/30 p-8 rounded-lg">
+          <h3 className="text-3xl font-bold">💎 Exclusive Member Benefits</h3>
+          <ul className="space-y-6">
+            <li className="flex items-start gap-3">
+              <span className="text-primary text-xl mt-1">✓</span>
+              <span className="text-lg">First access to hidden clearance deals worth up to 90% off retail prices</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary text-xl mt-1">✓</span>
+              <span className="text-lg">Instant notifications for price drops and hidden markdowns at your favorite stores</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary text-xl mt-1">✓</span>
+              <span className="text-lg">Premium deal-finding tools worth $200+ to find deals others miss</span>
+            </li>
+          </ul>
         </div>
 
-        {/* Comparison Grid */}
-        <div className="mt-12 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">See The Difference</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Without Deal Soldier */}
-            <Card className="p-6 space-y-4">
-              <h4 className="text-xl font-semibold text-red-500">Without Deal Soldier</h4>
-              <ul className="space-y-3">
-                <li className="flex gap-2">
-                  <span className="text-red-500">✕</span>
-                  <span>Hours of manual scanning required</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-red-500">✕</span>
-                  <span>Miss out on 90% of hidden deals</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-red-500">✕</span>
-                  <span>No access to deal-finding tools</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-red-500">✕</span>
-                  <span>Limited knowledge of store patterns</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-red-500">✕</span>
-                  <span>No community support or guidance</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-red-500">✕</span>
-                  <span>Wasted time on expired deals</span>
-                </li>
-              </ul>
-            </Card>
-
-            {/* With Deal Soldier */}
-            <Card className="p-6 space-y-4 border-primary">
-              <h4 className="text-xl font-semibold text-primary">With Deal Soldier</h4>
-              <ul className="space-y-3">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Automated tools do the work for you</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Instant notifications for best deals</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Professional deal-hunting toolkit</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Expert insights and strategies</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Active community support 24/7</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Real-time deal verification</span>
-                </li>
-              </ul>
-            </Card>
+        {/* Centered last video */}
+        <Card className="p-4 space-y-4">
+          <div className="aspect-[9/16] w-full">
+            <iframe
+              src={lastVideo.url}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              className="rounded-lg"
+            />
           </div>
-        </div>
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold">{lastVideo.title}</h3>
+            <p className="text-muted-foreground">{lastVideo.description}</p>
+            <a 
+              href="https://whop.com/deal-soldier/?a=digitalartlab" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-semibold text-base w-full text-center"
+            >
+              Join the Deal Hunting Elite
+            </a>
+          </div>
+        </Card>
 
-        {/* Final CTA */}
-        <div className="mt-12 text-center space-y-4">
-          <h3 className="text-3xl font-bold">Ready to Start Saving?</h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of smart shoppers who are already saving hundreds every month. 
-            Get instant access to our complete deal-hunting toolkit and start finding 
-            incredible deals today!
-          </p>
-          <Button size="lg" variant="default" className="mt-4">
-            Join Deal Soldier on Whop
-          </Button>
+        {/* Right sales copy */}
+        <div className="lg:flex flex-col justify-center space-y-8 bg-muted/30 p-8 rounded-lg">
+          <h3 className="text-3xl font-bold">🚀 Why Members Love Us</h3>
+          <ul className="space-y-6">
+            <li className="flex items-start gap-3">
+              <span className="text-primary text-xl mt-1">✓</span>
+              <span className="text-lg">Members save an average of $350+ monthly on everyday purchases</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary text-xl mt-1">✓</span>
+              <span className="text-lg">Join 5,000+ savvy shoppers finding incredible deals daily</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary text-xl mt-1">✓</span>
+              <span className="text-lg">Expert support and community tips available 24/7</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
