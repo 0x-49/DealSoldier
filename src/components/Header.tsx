@@ -17,7 +17,7 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <Button variant="default" size="lg" onClick={() => window.open('https://whop.com/dealsoldier/', '_blank')}>
+            <Button variant="default" size="lg" onClick={() => window.open('https://whop.com/deal-soldier/?a=digitalartlab', '_blank')}>
               Join DealSoldier
             </Button>
           </div>

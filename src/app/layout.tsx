@@ -15,6 +15,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <meta name="keywords" content="clearance deals, deal hunting, savings alerts, retail arbitrage, discount shopping, deal community, money saving tips, walmart deals, target clearance, costco deals, real-time alerts, deal notifications, shopping community, price tracking, deal soldier, sean sweeney" />
         <meta name="author" content="Sean Sweeney" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/images/DealSoldierLogo.jpg" type="image/jpeg" />
       </head>
       <body>
         <ThemeProvider

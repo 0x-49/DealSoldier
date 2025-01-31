@@ -20,7 +20,7 @@ export default function Home() {
         <Button 
           size="lg" 
           className="text-lg px-8 py-6"
-          onClick={() => window.open('https://whop.com/dealsoldier/', '_blank')}
+          onClick={() => window.open('https://whop.com/deal-soldier/?a=digitalartlab', '_blank')}
         >
           Start Your 7-Day Free Trial 🎯
         </Button>
@@ -48,7 +48,7 @@ export default function Home() {
         <Button 
           size="lg" 
           className="text-lg px-8 py-6"
-          onClick={() => window.open('https://whop.com/dealsoldier/', '_blank')}
+          onClick={() => window.open('https://whop.com/deal-soldier/?a=digitalartlab', '_blank')}
         >
           Start Your 7-Day Free Trial Now! 🎯
         </Button>
@@ -90,7 +90,7 @@ export default function Home() {
               <h3 className="font-semibold mb-4">Connect With Us</h3>
               <Button 
                 className="w-full"
-                onClick={() => window.open('https://whop.com/dealsoldier/', '_blank')}
+                onClick={() => window.open('https://whop.com/deal-soldier/?a=digitalartlab', '_blank')}
               >
                 Join Now 🎯
               </Button>
