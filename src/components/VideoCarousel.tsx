@@ -76,6 +76,7 @@ export const VideoCarousel = () => {
                 height="100%"
                 frameBorder="0"
                 allowFullScreen
+                title={`Video: ${video.title}`}
                 className="rounded-lg"
               />
             </div>
@@ -125,6 +126,7 @@ export const VideoCarousel = () => {
               height="100%"
               frameBorder="0"
               allowFullScreen
+              title={`Video: ${lastVideo.title}`}
               className="rounded-lg"
             />
           </div>

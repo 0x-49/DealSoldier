@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://dealsoldier.com/sitemap.xml
+Sitemap: https://joindealsoldier.com/sitemap.xml

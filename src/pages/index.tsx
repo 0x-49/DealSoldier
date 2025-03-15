@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { StarIcon, CheckIcon, InstagramIcon, FacebookIcon, YoutubeIcon, AlertCircle, Clock, Users, Search } from "lucide-react";
+import { TiktokIcon } from "@/components/icons/TiktokIcon";
 import { VideoCarousel } from "@/components/VideoCarousel";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -101,10 +102,13 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Join Deal Soldier – Find Hidden Clearance & Deals That Pay for Themselves!</title>
+        <title>Deal Soldier - Your Ultimate Deal Hunting Community</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/DealSoldierLogo.jpg" />
+        <link rel="apple-touch-icon" href="/images/DealSoldierLogo.jpg" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="description" content="Uncover the best deals on electronics, clothing, and more. Save hundreds or even thousands monthly with Deal Soldier's exclusive clearance alerts!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -372,25 +376,32 @@ export default function Home() {
               </div>
 
               {/* Connect */}
-              <div>
+              <div className="space-y-4">
                 <h3 className="text-lg font-semibold mb-4 text-foreground">Connect With Us</h3>
                 <div className="flex space-x-4 mb-4">
-                  <a href="https://www.instagram.com/superunsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://instagram.com/superunsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" title="Follow us on Instagram">
                     <InstagramIcon className="h-6 w-6" />
                   </a>
-                  <a href="https://www.youtube.com/@SuperUnsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                    <YoutubeIcon className="h-6 w-6" />
-                  </a>
-                  <a href="https://facebook.com/superunsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://facebook.com/superunsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" title="Follow us on Facebook">
                     <FacebookIcon className="h-6 w-6" />
                   </a>
+                  <a href="https://tiktok.com/@superunsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" title="Follow us on TikTok">
+                    <TiktokIcon className="h-6 w-6" />
+                  </a>
+                  <a href="https://www.youtube.com/@SuperUnsexy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" title="Subscribe to our YouTube channel">
+                    <YoutubeIcon className="h-6 w-6" />
+                  </a>
                 </div>
-                <a
-                  href="https://whop.com/deal-soldier/?a=digitalartlab"
-                  className="inline-block rounded-md bg-primary/90 px-6 py-3 font-semibold text-white shadow-lg hover:bg-primary transition-all w-full text-center"
-                >
-                  Join Now 🎯
-                </a>
+                
+                <div className="space-y-2 text-muted-foreground">
+                  <a href="tel:8009642546" className="block hover:text-primary transition-colors">(800) 964-2546</a>
+                  <a href="mailto:info@joindealsoldier.com" className="block hover:text-primary transition-colors">info@joindealsoldier.com</a>
+                  <address className="not-italic">
+                    115 Highway 641 S<br />
+                    Camden Chiropractic Health Center<br />
+                    Coworking Space Available in Camden, TN 38320
+                  </address>
+                </div>
               </div>
             </div>
 
