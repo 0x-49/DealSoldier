@@ -17,7 +17,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <meta name="author" content="Sean Sweeney" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
-        <link rel="icon" href="/images/DealSoldierLogo.jpg" type="image/jpeg" />
+        <link rel="icon" href="https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/dealSoldier.jpg" type="image/jpeg" />
         <link rel="canonical" href="https://joindealsoldier.com" />
         
         {/* Open Graph Meta Tags */}
